@@ -1,5 +1,13 @@
 
-new Chart(document.getElementById("line-chart"), {
+function makeChart(cybercrime) {
+  var cybercrimeLabels = cybercrime.map(function(d) {
+    return d.Offence;
+  });
+  var cantonLabels = cybercrime.map(function(d) {
+    return d.Canton;
+  });
+ 
+  var chart = new Chart(document.getElementById("line-chart"), {
     type: 'line',
     data: {
       labels: [2011,2012,2013,2014,2015,2016,2017,2018,2019,2020],
@@ -91,4 +99,11 @@ new Chart(document.getElementById("line-chart"), {
     
     
   });
+}
+
+
   
+// request data using d3
+d3
+  .csv("data.csv")
+  .then(makechart);
