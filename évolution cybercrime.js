@@ -6,7 +6,8 @@ function makeChart(cybercrime) {
   var cantonLabels = cybercrime.map(function(d) {
     return d.Canton;
   });
- 
+ // var yearsData = cybercrime.map(function(d) {return d.2009})
+
   var chart = new Chart(document.getElementById("line-chart"), {
     type: 'line',
     data: {
@@ -14,6 +15,8 @@ function makeChart(cybercrime) {
       datasets: [{ 
           label: "Soustraction de données (art. 143 CP)",
           data: [34,58,28,38,23,57,46,52,32,42],
+          // data: occurenceData
+          
           borderColor: "#029b5b",
           backgroundColor: "#029b5b",
           fill: false
