@@ -107,6 +107,7 @@ function makeChart(cybercrime) {
 
   
 // request data using d3
-d3
-  .csv("data.csv")
-  .then(makechart);
+d3.csv("data.csv")
+  .then(data => {
+    console.log("data",data);
+  });
